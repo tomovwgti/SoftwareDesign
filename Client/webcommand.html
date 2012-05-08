@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket / Node.js DEMO</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="themes/base/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.vtoggle.js"></script>
+    <script type="text/javascript" src="js/command.js"></script>
+
+</head>
+
+<body>
+
+<H1>Node.js + WebSocket によるリアルタイム通信</H1>
+
+<div id="jquery-ui-slider" >
+    <div class="jquery-ui-slider-item ">
+        <div class="jquery-ui-slider-title float-left ">RED：</div>
+        <div class="float-left"><input type="text" class="jquery-ui-slider-red-value" /></div>
+        <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-red">0</div>
+        <div class="float-clear"></div>
+    </div>
+    <div class="jquery-ui-slider-item ">
+        <div class="jquery-ui-slider-title float-left ">GREEN：</div>
+        <div class="float-left"><input type="text" class="jquery-ui-slider-green-value" /></div>
+        <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-green">0</div>
+        <div class="float-clear"></div>
+    </div>
+    <div class="jquery-ui-slider-item ">
+        <div class="jquery-ui-slider-title float-left ">BLUE：</div>
+        <div class="float-left"><input type="text" class="jquery-ui-slider-blue-value" /></div>
+        <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-blue">0</div>
+        <div class="float-clear"></div>
+    </div>
+</div>
+<div>
+    <input type="button" id="chime" value="Chime" style="width:100px">
+    <input type="button" id="led" value="LED" style="width:100px">
+    <hr>
+    <span id="uu" style="visibility:hidden"><img src="./image/uu.png"></span>
+    <span id="nyaa" style="visibility:hidden"><img src="./image/nyaa.png"></span>
+</div>
+<div>
+    <audio id="uu_sound" preload="auto" source src="./audio/uu.mp3"/>
+    <audio id="nyaa_sound" preload="auto" source src="./audio/nyaa.mp3"/>
+</div>
+</body>
+</html>
