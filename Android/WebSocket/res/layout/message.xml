@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <TextView
+            android:id="@+id/message_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:textSize="30sp"
+            android:layout_weight="1" />
+    <LinearLayout
+        android:id="@+id/ws_send_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp">
+        <Button
+            android:id="@+id/btn_uu_btn"
+            android:text="うー"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_nyaa_btn"
+            android:text="にゃー"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_map_btn"
+            android:text="中禅寺湖"
+            android:textSize="12dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+        </LinearLayout>
+</LinearLayout>
