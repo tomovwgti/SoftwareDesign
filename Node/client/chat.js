@@ -8,7 +8,7 @@
 
 (function (global) {
     // WebSocket
-    var ws = new WebSocket('ws://192.168.110.195:8001/');
+    var ws = new WebSocket('ws://localhost:8001/');
 
     // サーバに送信
     $(this).keydown(function (key) {
