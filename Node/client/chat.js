@@ -9,13 +9,16 @@
 (function (global) {
     // WebSocket
     var ws = new WebSocket('ws://localhost:8001/');
+    var msg = {
+        'message': ''
+    };
 
     // サーバに送信
     $(this).keydown(function (key) {
         if (key.keyCode === 13) {
-            var msg = $('#send').val();
-            console.log('send message --> ' + msg);
-            ws.send(msg);
+            msg.message = $('#send').val();
+            console.log('send message --> ' + JSON.stringify(msg));
+            ws.send(JSON.stringify(msg));
             $('#send').val('');
         }
     });
