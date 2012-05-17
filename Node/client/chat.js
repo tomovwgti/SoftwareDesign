@@ -27,6 +27,20 @@
     ws.onmessage = function (event) {
         var receive_message = JSON.parse(event.data);
         console.log('receive message <-- ' + event.data);
+
+        // Message
+        switch (receive_message.message) {
+            // （」・ω・）」うー！
+            case 'uu':
+                $('body').append('<div> （」・ω・）」うー！ </div>');
+                break;
+            // （／・ω・）／にゃー！
+            case 'nyaa':
+                $('body').append('<div> （／・ω・）／にゃー！ </div>');
+                break;
+            default:
+                $('body').append('<div>' + receive_message.message + '</div>');
+        }
     }
 }(this));
 
