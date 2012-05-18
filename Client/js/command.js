@@ -61,7 +61,7 @@ $(function () {
         // Command
         switch (receive_message.command) {
             case 'geo':
-                var map = 'http://maps.google.co.jp/?ie=UTF8&ll=' + receive_message.lat +',' + receive_message.lon + '&z=13'
+                var map = 'http://maps.google.co.jp/?ie=UTF8&ll=' + receive_message.geo.lat +',' + receive_message.geo.lon + '&z=13'
                 document.location = map;
                 break;
             case 'light':
