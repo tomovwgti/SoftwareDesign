@@ -34,7 +34,7 @@ $(function () {
         var msg = {
             'sender': 'browser',
             'command': 'chime'
-        }
+        };
         console.log(JSON.stringify(msg));
         ws.send(JSON.stringify(msg));
     });
@@ -47,7 +47,7 @@ $(function () {
             'led' : {
                 'status': false
             }
-        }
+        };
         msg.led.status = led_state;
         console.log(JSON.stringify(msg));
         ws.send(JSON.stringify(msg));
@@ -61,16 +61,18 @@ $(function () {
         // Command
         switch (receive_message.command) {
             case 'geo':
-                var map = 'http://maps.google.co.jp/?ie=UTF8&ll=' + receive_message.geo.lat +',' + receive_message.geo.lon + '&z=13'
+                var map = 'http://maps.google.co.jp/?ie=UTF8&ll='
+                    + receive_message.geo.lat +','
+                    + receive_message.geo.lon + '&z=13';
                 document.location = map;
                 break;
             case 'light':
-                $('.jquery-ui-slider-red-value').val(receive_message.red);
-                $('.jquery-ui-slider-green-value').val(receive_message.green);
-                $('.jquery-ui-slider-blue-value').val(receive_message.blue);
-                $('#jquery-ui-slider-red').slider('value', receive_message.red);
-                $('#jquery-ui-slider-green').slider('value', receive_message.green);
-                $('#jquery-ui-slider-blue').slider('value', receive_message.blue);
+                $('.jquery-ui-slider-red-value').val(receive_message.light.red);
+                $('.jquery-ui-slider-green-value').val(receive_message.light.green);
+                $('.jquery-ui-slider-blue-value').val(receive_message.light.blue);
+                $('#jquery-ui-slider-red').slider('value', receive_message.light.red);
+                $('#jquery-ui-slider-green').slider('value', receive_message.light.green);
+                $('#jquery-ui-slider-blue').slider('value', receive_message.light.blue);
                 break;
         }
 
@@ -91,7 +93,7 @@ $(function () {
                 }
                 break;
         }
-    }
+    };
 
     $(function() {
         var msg = {
@@ -102,7 +104,7 @@ $(function () {
                 'green': 0,
                 'blue': 0
             }
-        }
+        };
 
         $('#jquery-ui-slider > div > .jquery-ui-slider-multi').each(function() {
 
