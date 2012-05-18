@@ -6,6 +6,25 @@
  * To change this template use File | Settings | File Templates.
  */
 
+/* JSONの形式は以下のようになっている
+{
+    "sender":"browser",
+    "command":"led",
+    "led":{
+        "status":false
+    },
+    "light":{
+        "red":255,
+        "green":255,
+        "blue":255
+    },
+    "geo":{
+        "lat":36.744386,
+        "lon":139.457703
+    }
+}
+*/
+
 $(function () {
     // WebSocket
     var ws = new WebSocket('ws://192.168.110.195:8001/');
@@ -25,9 +44,11 @@ $(function () {
         var msg = {
             'sender': 'browser',
             'command': 'led',
-            'status': false
+            'led' : {
+                'status': false
+            }
         }
-        msg.status = led_state;
+        msg.led.status = led_state;
         console.log(JSON.stringify(msg));
         ws.send(JSON.stringify(msg));
     });
@@ -76,9 +97,11 @@ $(function () {
         var msg = {
             'sender': 'browser',
             'command': 'light',
-            'red': 0,
-            'green': 0,
-            'blue': 0
+            'light' : {
+                'red': 0,
+                'green': 0,
+                'blue': 0
+            }
         }
 
         $('#jquery-ui-slider > div > .jquery-ui-slider-multi').each(function() {
@@ -96,17 +119,17 @@ $(function () {
                     $(inputValue).html(ui.value);
 
                     if (inputValue === '.jquery-ui-slider-red-value') {
-                        msg.red = ui.value;
-                        msg.green = $('.jquery-ui-slider-green-value').val();
-                        msg.blue = $('.jquery-ui-slider-blue-value').val();
+                        msg.light.red = ui.value;
+                        msg.light.green = $('.jquery-ui-slider-green-value').val();
+                        msg.light.blue = $('.jquery-ui-slider-blue-value').val();
                     } else if (inputValue === '.jquery-ui-slider-green-value') {
-                        msg.red = $('.jquery-ui-slider-red-value').val();
-                        msg.green = ui.value;
-                        msg.blue = $('.jquery-ui-slider-blue-value').val();
+                        msg.light.red = $('.jquery-ui-slider-red-value').val();
+                        msg.light.green = ui.value;
+                        msg.light.blue = $('.jquery-ui-slider-blue-value').val();
                     } else {
-                        msg.red = $('.jquery-ui-slider-red-value').val();
-                        msg.green = $('.jquery-ui-slider-green-value').val();
-                        msg.blue = ui.value;
+                        msg.light.red = $('.jquery-ui-slider-red-value').val();
+                        msg.light.green = $('.jquery-ui-slider-green-value').val();
+                        msg.light.blue = ui.value;
                     }
 
                     console.log(JSON.stringify(msg));
