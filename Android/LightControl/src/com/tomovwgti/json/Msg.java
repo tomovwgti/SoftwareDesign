@@ -4,9 +4,10 @@ package com.tomovwgti.json;
 public class Msg {
     String sender;
     String command;
-    int red;
-    int green;
-    int blue;
+    String message;
+    Led led;
+    Light light;
+    Geo geo;
 
     public String getSender() {
         return sender;
@@ -24,27 +25,35 @@ public class Msg {
         this.command = command;
     }
 
-    public int getRed() {
-        return red;
+    public String getMessage() {
+        return message;
     }
 
-    public void setRed(int red) {
-        this.red = red;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public int getGreen() {
-        return green;
+    public Led getLed() {
+        return led;
     }
 
-    public void setGreen(int green) {
-        this.green = green;
+    public void setLed(Led led) {
+        this.led = led;
     }
 
-    public int getBlue() {
-        return blue;
+    public Light getLight() {
+        return light;
     }
 
-    public void setBlue(int blue) {
-        this.blue = blue;
+    public void setLight(Light light) {
+        this.light = light;
+    }
+
+    public Geo getGeo() {
+        return geo;
+    }
+
+    public void setGeo(Geo geo) {
+        this.geo = geo;
     }
 }

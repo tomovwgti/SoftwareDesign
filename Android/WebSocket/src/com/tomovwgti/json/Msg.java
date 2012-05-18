@@ -5,12 +5,9 @@ public class Msg {
     String sender;
     String command;
     String message;
-    boolean status;
-    int red;
-    int green;
-    int blue;
-    String lat;
-    String lon;
+    Led led;
+    Light light;
+    Geo geo;
 
     public String getSender() {
         return sender;
@@ -28,38 +25,6 @@ public class Msg {
         this.command = command;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public int getRed() {
-        return red;
-    }
-
-    public void setRed(int red) {
-        this.red = red;
-    }
-
-    public int getGreen() {
-        return green;
-    }
-
-    public void setGreen(int green) {
-        this.green = green;
-    }
-
-    public int getBlue() {
-        return blue;
-    }
-
-    public void setBlue(int blue) {
-        this.blue = blue;
-    }
-
     public String getMessage() {
         return message;
     }
@@ -68,19 +33,27 @@ public class Msg {
         this.message = message;
     }
 
-    public String getLat() {
-        return lat;
+    public Led getLed() {
+        return led;
     }
 
-    public void setLat(String lat) {
-        this.lat = lat;
+    public void setLed(Led led) {
+        this.led = led;
     }
 
-    public String getLon() {
-        return lon;
+    public Light getLight() {
+        return light;
     }
 
-    public void setLon(String lon) {
-        this.lon = lon;
+    public void setLight(Light light) {
+        this.light = light;
+    }
+
+    public Geo getGeo() {
+        return geo;
+    }
+
+    public void setGeo(Geo geo) {
+        this.geo = geo;
     }
 }

@@ -159,9 +159,9 @@ public class LightControlActivity extends AccessoryBaseActivity {
     private void executeCommand(Msg msg) {
         // ADKへ出力
         LedLight light = new LedLight();
-        light.red = contains(msg.getRed());
-        light.green = contains(msg.getGreen());
-        light.blue = contains(msg.getBlue());
+        light.red = contains(msg.getLight().getRed());
+        light.green = contains(msg.getLight().getGreen());
+        light.blue = contains(msg.getLight().getBlue());
         light.sendData();
         // 変化を反映する
         mRedLed.setProgress(light.red);
