@@ -10,6 +10,7 @@
     // WebSocket
     var ws = new WebSocket('ws://localhost:8001/');
     var msg = {
+        'command': 'Message',
         'message': ''
     };
 
