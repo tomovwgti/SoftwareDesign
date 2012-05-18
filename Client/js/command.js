@@ -27,7 +27,7 @@
 
 $(function () {
     // WebSocket
-    var ws = new WebSocket('ws://192.168.110.195:8001/');
+    var ws = new WebSocket('ws://localhost:8001/');
     var led_state = false;
 
     $('#chime').click(function() {
