@@ -2,7 +2,7 @@
 Software Design用のgitリポジトリです。
 
 ## リポジトリの構成
----
+
 - Android : Androidプロジェクト
 - Arduino : Arduinoプロジェクト
 - Client : webcommandクライアント
