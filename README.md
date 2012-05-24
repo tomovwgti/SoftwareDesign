@@ -52,10 +52,10 @@ Software Design用のgitリポジトリです。
 
 ***
 
-## NVM/Node.jsのインストール
+## NVM( Node Version Manager)とNode.jsのインストール
 ```
  $ git clone https://github.com/creationix/nvm.git .nvm
  $ source .nvm/nvm.sh
  $ nvm install v0.6.6  // Node.js v0.6.6をインストール
- $ nvm use v0.6.6
+ $ nvm use v0.6.6      // Node v0.6.6を使用
 ```
