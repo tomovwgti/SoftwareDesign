@@ -1,4 +1,4 @@
-# Software Design
+# Software Design 8月号
 Software Design用のgitリポジトリです。
 
 ## リポジトリの構成
