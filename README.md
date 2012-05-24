@@ -23,9 +23,6 @@ Software Design用のgitリポジトリです。
 - Arduino上のフルカラーLEDをスライダーでコントロールする
 - 要AdkLib
 
-#### WebCommand
-- 
-
 #### WebSocket
 - WebSocketを使ったAndroidクライアント
 
