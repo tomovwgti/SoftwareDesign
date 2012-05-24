@@ -61,4 +61,4 @@ Software Design用のgitリポジトリです。
 ```
 
 ### ADK Libraryのクラス図
-![クラス図](図5.png)
+![クラス図](class.png)
