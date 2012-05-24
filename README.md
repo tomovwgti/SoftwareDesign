@@ -27,27 +27,27 @@ Software Design用のgitリポジトリです。
 - WebSocketを使ったAndroidクライアント
 
 
-### Arduino
+### [Arduino](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino)
 ***
-#### Device
+#### [Device](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino/Device)
 - ADKでArduinoシールドに載ったLEDとフルカラーLEDをコントロールする
 
-#### FullColorLED
+#### [FullColorLED](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino/FullColorLED)
 - Arduino単体でフルカラーLEDをコントロールするサンプル
 
-#### LED
+#### [LED](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino/LED)
 - ADKでLEDをコントロールする
 
-### Client
+### [Client](https://github.com/tomovwgti/SoftwareDesign/tree/master/Client)
 ***
 - ADKを通してArduinoシールドのフルカラーLEDを操作できるブラウザクライアント
 
-### Node
+### [Node](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node)
 ***
-#### client
+#### [client](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/client)
 - WebSocketを使ってNode.jsサーバとのやりとりを確認するブラウザクライアント
 
-#### server
+#### [server](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/server)
 - Node.jsサーバ
 
 ***
