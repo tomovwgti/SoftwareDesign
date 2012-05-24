@@ -1,6 +1,6 @@
 # Software Design
 Software Design用のgitリポジトリです。
-***
+
 ## リポジトリの構成
 ---
 - Android : Androidプロジェクト
@@ -10,7 +10,6 @@ Software Design用のgitリポジトリです。
 - READEME.md : このファイル
 
 ## 各フォルダの説明
----
 ### Android
 ***
 #### AdkLed
@@ -53,11 +52,13 @@ Software Design用のgitリポジトリです。
 
 #### server
 - Node.jsサーバ
+
 ***
+
 ## NVM/Node.jsのインストール
 ```
-$ git clone https://github.com/creationix/nvm.git .nvm
-$ source .nvm/nvm.sh
-$ nvm install v0.6.6  // Node.js v0.6.6をインストール
-$ nvm use v0.6.6
+ $ git clone https://github.com/creationix/nvm.git .nvm
+ $ source .nvm/nvm.sh
+ $ nvm install v0.6.6  // Node.js v0.6.6をインストール
+ $ nvm use v0.6.6
 ```
