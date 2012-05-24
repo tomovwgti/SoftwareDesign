@@ -59,3 +59,6 @@ Software Design用のgitリポジトリです。
  $ nvm install v0.6.6  // Node.js v0.6.6をインストール
  $ nvm use v0.6.6      // Node v0.6.6を使用
 ```
+
+### ADK Libraryのクラス図
+![クラス図](図5.png)
