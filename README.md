@@ -1,6 +1,11 @@
 # Software Design 8月号
 Software Design用のgitリポジトリです。
 
+## git clone
+```
+ $ git clone git://github.com/tomovwgti/SoftwareDesign.git
+```
+
 ## リポジトリの構成
 
 - Android : Androidプロジェクト
@@ -60,5 +65,5 @@ Software Design用のgitリポジトリです。
  $ nvm use v0.6.6      // Node v0.6.6を使用
 ```
 
-### ADK Libraryのクラス図
+## ADK Libraryのクラス図
 [クラス図](class.png)
