@@ -10,20 +10,20 @@ Software Design用のgitリポジトリです。
 - READEME.md : このファイル
 
 ## 各フォルダの説明
-### Android
+### [Android](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android)
 ***
-#### AdkLed
+#### [AdkLed](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/AdkLed)
 - ADKでオンボードのLEDを点灯させる
 - 要AdkLib
 
-#### AdkLib
+#### [AdkLib](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/AdkLib)
 - AndroidでADKを利用するためのライブラリ
 
-#### LightControl
+#### [LightControl](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/LightControl)
 - Arduino上のフルカラーLEDをスライダーでコントロールする
 - 要AdkLib
 
-#### WebSocket
+#### [WebSocket](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/WebSocket)
 - WebSocketを使ったAndroidクライアント
 
 
