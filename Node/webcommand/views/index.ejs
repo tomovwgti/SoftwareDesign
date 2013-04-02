@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="javascripts/jquery-ui-1.8.19.custom.min.js"></script>
+        <script type="text/javascript" src="javascripts/jquery.vtoggle.js"></script>
+        <script type="text/javascript" src="javascripts/command.js"></script>
+
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href='/stylesheets/base/jquery.ui.all.css'>
+        <link rel="stylesheet" href='/stylesheets/slider.css'>
+  </head>
+  <body>
+    <H1>Node.js + Socket.IO によるリアルタイム通信</H1>
+
+    <div id="jquery-ui-slider" >
+        <div class="jquery-ui-slider-item ">
+            <div class="jquery-ui-slider-title float-left ">RED：</div>
+            <div class="float-left"><input type="text" class="jquery-ui-slider-red-value" /></div>
+            <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-red">0</div>
+            <div class="float-clear"></div>
+        </div>
+        <div class="jquery-ui-slider-item ">
+            <div class="jquery-ui-slider-title float-left ">GREEN：</div>
+            <div class="float-left"><input type="text" class="jquery-ui-slider-green-value" /></div>
+            <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-green">0</div>
+            <div class="float-clear"></div>
+        </div>
+        <div class="jquery-ui-slider-item ">
+            <div class="jquery-ui-slider-title float-left ">BLUE：</div>
+            <div class="float-left"><input type="text" class="jquery-ui-slider-blue-value" /></div>
+            <div class="jquery-ui-slider-multi float-left" id="jquery-ui-slider-blue">0</div>
+            <div class="float-clear"></div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <span id="uu" style="visibility:hidden"><img src="images/uu.png"></span>
+        <span id="nyaa" style="visibility:hidden"><img src="images/nyaa.png"></span>
+    </div>
+    <div>
+        <audio id="uu_sound" preload="auto" source src="audio/uu.mp3"/>
+        <audio id="nyaa_sound" preload="auto" source src="audio/nyaa.mp3"/>
+    </div>
+  </body>
+</html>
