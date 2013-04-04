@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.tomovwgti.json.Value;
+import com.tomovwgti.json.Msg;
 
 public class SocketIOFragment extends Fragment {
     static final String TAG = SocketIOFragment.class.getSimpleName();
@@ -45,7 +45,7 @@ public class SocketIOFragment extends Fragment {
         public void onMessage();
 
         /** JSONメッセージを受信したとき */
-        public void onJsonMessage(Value message);
+        public void onJsonMessage(Msg message);
 
         /** イベントを受信したとき */
         public void onEvent();
@@ -79,7 +79,7 @@ public class SocketIOFragment extends Fragment {
                     break;
                 case SocketIOManager.SOCKETIO_JSON_MESSAGE:
                     Log.i(TAG, "SOCKETIO_JSON_MESSAGE");
-                    Value message = JSON.decode((String) (msg.obj), Value.class);
+                    Msg message = JSON.decode((String) (msg.obj), Msg.class);
                     mCallback.onJsonMessage(message);
                     break;
                 case SocketIOManager.SOCKETIO_EVENT:
@@ -133,7 +133,7 @@ public class SocketIOFragment extends Fragment {
     /**
      * Socket.IOを使って送信
      */
-    public void emit(Value message) {
+    public void emit(Msg message) {
         try {
             mSocket.emit("message", new JSONObject(JSON.encode(message)));
         } catch (JSONException e) {

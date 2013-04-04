@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tomovwgti.json.Geo;
+import com.tomovwgti.json.Msg;
 import com.tomovwgti.json.Value;
 import com.tomovwgti.socketio.SocketIOFragment.MessageCallback;
 import com.tomovwgti.socketio.SocketIOFragment.MessageCallbackPicker;
@@ -68,11 +69,13 @@ public class SocketIOActivity extends FragmentActivity implements MessageCallbac
         uuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value sendMessage = new Value();
-                sendMessage.setCommand("");
-                sendMessage.setSender("android");
-                sendMessage.setCommand("Message");
-                sendMessage.setMessage(UU_STR);
+                Msg sendMessage = new Msg();
+                Value value = new Value();
+                value.setCommand("");
+                value.setSender("android");
+                value.setCommand("Message");
+                value.setMessage(UU_STR);
+                sendMessage.setValue(value);
                 ((SocketIOFragment) getFragment()).emit(sendMessage);
                 setMessage(UU_TEXT, Color.GREEN);
             }
@@ -83,11 +86,13 @@ public class SocketIOActivity extends FragmentActivity implements MessageCallbac
         nyaaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value sendMessage = new Value();
-                sendMessage.setCommand("");
-                sendMessage.setSender("android");
-                sendMessage.setCommand("Message");
-                sendMessage.setMessage(NYAA_STR);
+                Msg sendMessage = new Msg();
+                Value value = new Value();
+                value.setCommand("");
+                value.setSender("android");
+                value.setCommand("Message");
+                value.setMessage(NYAA_STR);
+                sendMessage.setValue(value);
                 ((SocketIOFragment) getFragment()).emit(sendMessage);
                 setMessage(NYAA_TEXT, Color.GREEN);
             }
@@ -98,14 +103,16 @@ public class SocketIOActivity extends FragmentActivity implements MessageCallbac
         mapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value sendMessage = new Value();
-                sendMessage.setCommand("geo");
-                sendMessage.setMessage("Map");
-                sendMessage.setSender("android");
+                Msg sendMessage = new Msg();
+                Value value = new Value();
+                value.setCommand("geo");
+                value.setMessage("Map");
+                value.setSender("android");
                 Geo geo = new Geo();
                 geo.setLat("36.744386");
                 geo.setLon("139.457703");
-                sendMessage.setGeo(geo);
+                value.setGeo(geo);
+                sendMessage.setValue(value);
                 ((SocketIOFragment) getFragment()).emit(sendMessage);
                 setMessage(JSON.encode(sendMessage), Color.GREEN);
             }
@@ -228,32 +235,33 @@ public class SocketIOActivity extends FragmentActivity implements MessageCallbac
     }
 
     @Override
-    public void onJsonMessage(Value message) {
+    public void onJsonMessage(Msg message) {
         Log.d(TAG, "Socket.io message");
-        if (message.getCommand() != null && message.getCommand().equals("")) {
-            if (UU_STR.equals(message.getMessage())) {
+        Value value = message.getValue();
+        if (value.getCommand() != null && value.getCommand().equals("")) {
+            if (UU_STR.equals(value.getMessage())) {
                 setMessage(UU_TEXT, Color.RED);
-            } else if (NYAA_STR.equals(message.getMessage())) {
+            } else if (NYAA_STR.equals(value.getMessage())) {
                 setMessage(NYAA_TEXT, Color.RED);
             } else {
-                setMessage(message.getMessage(), Color.BLUE);
+                setMessage(value.getMessage(), Color.BLUE);
             }
-        } else if (message.getCommand() != null && message.getCommand().equals("geo")) {
+        } else if (value.getCommand() != null && value.getCommand().equals("geo")) {
             // Map呼び出し
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("geo:" + message.getGeo().getLat() + ","
-                    + message.getGeo().getLon() + "?z=13"));
+            intent.setData(Uri.parse("geo:" + value.getGeo().getLat() + ","
+                    + value.getGeo().getLon() + "?z=13"));
             startActivity(intent);
-        } else if (message.getCommand() != null && message.getCommand().equals("http")) {
+        } else if (value.getCommand() != null && value.getCommand().equals("http")) {
             // Browser呼び出し
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(message.getMessage()));
+            intent.setData(Uri.parse(value.getMessage()));
             startActivity(intent);
         } else {
             // それ以外
-            setMessage(message.getMessage(), Color.GREEN);
+            setMessage(value.getMessage(), Color.GREEN);
         }
     }
 
