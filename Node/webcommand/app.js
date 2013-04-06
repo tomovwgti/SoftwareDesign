@@ -39,7 +39,7 @@ io.sockets.on('connection', function(socket) {
     // メッセージを受けた時の処理
     socket.on('message', function(data) {
         // 接続しているクライアントに全てに送信
-        console.log("message");
+        console.log("message: " + JSON.stringify(data.value));
         socket.broadcast.emit('message', { value: data.value });
     });
 

@@ -14,11 +14,16 @@
 
 package com.tomovwgti.light;
 
+import io.socket.SocketIO;
 import net.arnx.jsonic.JSON;
+import net.arnx.jsonic.JSONException;
+
+import org.json.JSONObject;
 
 import com.tomovwgti.android.accessory.io.OutputData;
 import com.tomovwgti.json.Light;
 import com.tomovwgti.json.Msg;
+import com.tomovwgti.json.Value;
 
 public class LedLight extends OutputData {
 
@@ -32,9 +37,14 @@ public class LedLight extends OutputData {
     private static final byte GREEN_LED = 1;
     private static final byte BLUE_LED = 2;
 
+    private SocketIO mSocket;
     public int red;
     public int green;
     public int blue;
+
+    public LedLight(SocketIO socket) {
+        mSocket = socket;
+    }
 
     @Override
     public void sendData() {
@@ -45,14 +55,24 @@ public class LedLight extends OutputData {
 
     public void sendWebSocket() {
         Msg msg = new Msg();
+        Value value = new Value();
         Light light = new Light();
-        msg.setCommand("light");
-        msg.setSender("android");
+        value.setCommand("light");
+        value.setSender("android");
         light.setRed(red);
         light.setGreen(green);
         light.setBlue(blue);
-        msg.setLight(light);
-        String message = JSON.encode(msg);
-        WebSocketManager.send(message);
+        value.setLight(light);
+        msg.setValue(value);
+
+        try {
+            mSocket.emit("message", new JSONObject(JSON.encode(msg)));
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (org.json.JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }

@@ -56,7 +56,7 @@ $(function () {
     // Message from Server
     socket.on('message', function (event) {
         var receive_message = event.value;
-        console.log('receive message <-- ' + event.value);
+        console.log('receive message <-- ' + JSON.stringify(event.value));
 
         // Command
         switch (receive_message.command) {
