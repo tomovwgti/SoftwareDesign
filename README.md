@@ -28,8 +28,8 @@ Software Design用のgitリポジトリです。
 - Arduino上のフルカラーLEDをスライダーでコントロールする
 - 要AdkLib
 
-#### [WebSocket](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/WebSocket)
-- WebSocketを使ったAndroidクライアント
+#### [SocketIO](https://github.com/tomovwgti/SoftwareDesign/tree/master/Android/SocketIO)
+- Socket.IOを使ったAndroidクライアント
 
 
 ### [Arduino](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino)
@@ -43,17 +43,13 @@ Software Design用のgitリポジトリです。
 #### [LED](https://github.com/tomovwgti/SoftwareDesign/tree/master/Arduino/LED)
 - ADKでLEDをコントロールする
 
-### [Client](https://github.com/tomovwgti/SoftwareDesign/tree/master/Client)
-***
-- ADKを通してArduinoシールドのフルカラーLEDを操作できるブラウザクライアント
-
 ### [Node](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node)
 ***
-#### [client](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/client)
-- WebSocketを使ってNode.jsサーバとのやりとりを確認するブラウザクライアント
+#### [chatserver](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/chatserver)
+- Socket.IOを使ってNode.jsサーバとのやりとりを確認するチャットサーバ/クライアント
 
-#### [server](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/server)
-- Node.jsサーバ
+#### [webcommand](https://github.com/tomovwgti/SoftwareDesign/tree/master/Node/webcommand)
+- ブラウザでLEDをコントロールするためのサーバ/クライアント
 
 ***
 
@@ -61,8 +57,8 @@ Software Design用のgitリポジトリです。
 ```
  $ git clone https://github.com/creationix/nvm.git .nvm
  $ source .nvm/nvm.sh
- $ nvm install v0.6.6  // Node.js v0.6.6をインストール
- $ nvm use v0.6.6      // Node v0.6.6を使用
+ $ nvm install v0.8.16  // Node.js v0.8.16をインストール
+ $ nvm use v0.8.16      // Node v0.8.16を使用
 ```
 
 ## ADK Libraryのクラス図
