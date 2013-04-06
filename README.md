@@ -10,8 +10,7 @@ Software Design用のgitリポジトリです。
 
 - Android : Androidプロジェクト
 - Arduino : Arduinoプロジェクト
-- Client : webcommandクライアント
-- Node : Node.js
+- Node : Node.jsサーバ/クライアント
 - READEME.md : このファイル
 
 ## 各フォルダの説明
