@@ -32,10 +32,11 @@ app.get('/', routes.index);
 
 // ポートをリッスンする
 server.listen(app.get('port'));
+console.log('Listening...');
 
 // クライアントが接続してきたときの処理
 io.sockets.on('connection', function(socket) {
-    console.log("connection");
+    console.log("connect");
     // メッセージを受けた時の処理
     socket.on('message', function(data) {
         // 接続しているクライアントに全てに送信
@@ -45,6 +46,6 @@ io.sockets.on('connection', function(socket) {
 
     // クライアントが切断した時に処理
     socket.on('disconnection', function() {
-        console.log("disconnection");
+        console.log("disconnect");
     });
 });
