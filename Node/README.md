@@ -32,8 +32,6 @@ $ sudo npm install express -g
      $ node app
 
 $ cd chatserver && npm install
-$ npm install socket.io
-```ひな形を起動するには
+$ npm install socket.io```サーバを起動するには
 
-```$ node app.js
-```
+```$ node app.js```
