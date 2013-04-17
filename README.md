@@ -6,6 +6,8 @@ Software Design用のgitリポジトリです。
  $ git clone git://github.com/tomovwgti/SoftwareDesign.git
 ```
 
+#### Software Design 8月号当時のコードは上記に続けて以下で取得できます
+```$ git checkout -b v1.0 refs/tags/v1.0```
 ## リポジトリの構成
 
 - Android : Androidプロジェクト
