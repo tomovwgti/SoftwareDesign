@@ -1,5 +1,5 @@
-# Software Design 8月号
-Software Design用のgitリポジトリです。
+# Androidエンジニア養成読本 Vol.2
+[Androidエンジニア養成読本 Vol.2](http://gihyo.jp/book/2013/978-4-7741-5888-4)用のgitリポジトリです。
 
 ## git clone
 ```
