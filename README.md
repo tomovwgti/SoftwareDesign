@@ -3,11 +3,13 @@
 
 ## git clone
 ```
- $ git clone git://github.com/tomovwgti/SoftwareDesign.git
+ $ git clone https://github.com/tomovwgti/SoftwareDesign.git
 ```
 
 #### Software Design 8月号当時のコードは上記に続けて以下で取得できます
-```$ git checkout -b v1.0 refs/tags/v1.0```
+```
+$ git checkout -b v1.0 refs/tags/v1.0
+```
 ## リポジトリの構成
 
 - Android : Androidプロジェクト
